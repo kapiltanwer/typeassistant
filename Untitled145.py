@@ -1,9 +1,3 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[ ]:
-
-
 import pyttsx3        #=========>(pyttsx3)  is module used to enable speak function
 
 import datetime      #====used to enable time function
@@ -46,7 +40,7 @@ def wishme():          #========>>>> all this is used to say time
             print("Your time is {} ".format(hour))
             speak("To run  program again please press shfit and enter")
             
-    if Command=="game":    ######3=====>>> alll the code is of game
+    elif Command=="game":    ######3=====>>> alll the code is of game
         print("GAME START ")
         start=input("Type 'start' to continue game ")
         if start==start:       ### start the game
@@ -54,9 +48,9 @@ def wishme():          #========>>>> all this is used to say time
             print("1_Answer The Question wisely")
             print("2_WRONG Answer will give you penalty")
             from playsound import playsound
-            playsound("C:\\Users\\admin\\Desktop\\group1\\group(1)type_assistant\Among Us Role Sound Effect.mp3")###====>.. 1st tune
+            playsound('C:\\Users\\admin\\Desktop\\Among Us Role Sound Effect.mp3')###====>.. 1st tune
             from playsound import playsound
-            playsound("C:\\Users\\admin\\Desktop\\group1\\group(1)type_assistant\\technical_guruji.mp3") ####3=====>>>>  2ND TUNE
+            playsound("C:\\Users\\admin\\Desktop\\technical_guruji - Copy.mp3") ####3=====>>>>  2ND TUNE
     
         k=0
         while k<=5:
@@ -88,7 +82,7 @@ def wishme():          #========>>>> all this is used to say time
                 print("Game over")
                 speak("To run  program again please press shfit and enter")
                 break
-    if Command=="reverse":
+    elif Command=="reverse":
         speak("Enter your number")
         number=int(input("ENTER YOUR NUMBER"))
         k=len(str(number))
@@ -101,15 +95,33 @@ def wishme():          #========>>>> all this is used to say time
             l=l+1
         print(rev)
         speak("The reverse number  is{}".format(rev))
+    elif Command=="stone":
+        import random
+        user_action = input("Enter a choice (rock, paper, scissors): ")
+        possible_actions = ["rock", "paper", "scissors"]
+        computer_action = random.choice(possible_actions)
+        print(f"\nYou chose {user_action}, computer chose {computer_action}.\n")
+        if user_action == computer_action:
+            print(f"Both players selected {user_action}. It's a tie!")
+        elif user_action == "rock":
+            if computer_action == "scissors":
+                print("Rock smashes scissors! You win!")
+            else:
+                print("Paper covers rock! You lose.")
+        elif user_action == "paper":
+                if computer_action == "rock":
+                    print("Paper covers rock! You win!")
+                else:
+                    print("Scissors cuts paper! You lose.")
+        elif user_action == "scissors":
+                if computer_action == "paper":
+                    print("Scissors cuts paper! You win!")
+                else:
+                        print("Rock smashes scissors! You lose.")
  
         
-if __name__== "__main__" :
+if _name== "main_" :
     speak("What do you want sir")
     wishme()
-
-
-# In[ ]:
-
-
 
 
